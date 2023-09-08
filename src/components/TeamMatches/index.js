@@ -16,7 +16,10 @@ class TeamMatches extends Component {
     this.getMatchData()
   }
 
-  getMatchData = async () => {
+  getMatchData = async () => { 
+     const {match} = this.props
+    const {params} = match
+    const {id} = params
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const data = await response.json()
     const updatedData = {
